@@ -168,7 +168,7 @@
                 <!--                                <div class="error-message"></div>-->
                 <!--                                <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>-->
 
-                <button type="submit">Gửi thông tin</button>
+                <button type="submit" onclick="sendEmail()">Gửi thông tin</button>
               </div>
 
             </div>
@@ -1170,6 +1170,30 @@
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+<!--send mail-->
+<!--curl --location --request POST \
+'https://send.api.mailtrap.io/api/send' \
+--header 'Authorization: Bearer 425628c90245813bb9ba82e7dd4abf7b' \
+--header 'Content-Type: application/json' \
+--data-raw '{"from":{"email":"mailtrap@ngoimaufuchi.xyz",
+"name":"Mailtrap Test"},"to":[{"email":"huy10041996@gmail.com"}],"subject":"You are awesome!"
+,"text":"Congrats for sending test email with Mailtrap!","category":"Integration Test"}'-->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendEmail() {
+    Email.send({
+      Host : "smtp.mailtrap.io",
+      Username : "api",
+      Password : "425628c90245813bb9ba82e7dd4abf7b",
+      To : 'huyem1004@gmail.com',
+      From : "mailtrap@ngoimaufuchi.xyz",
+      Subject : "Test email",
+      Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
+    }).then(
+            message => alert(message)
+    );
+  }
+</script>
 </body>
 
 </html>
