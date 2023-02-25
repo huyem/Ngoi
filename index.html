@@ -142,7 +142,7 @@
         </div>
 
         <div class="col-lg-5" data-aos="fade">
-          <form action="#"     method="post">
+          <form action="mailto:huyem1004@gmail.com" method="post" enctype="text/plain">
             <h3>Nhận báo giá và đóng góp ý kiến</h3>
             <p>Quý khách vui lòng cung cấp thông tin chính xác để đội ngũ nhân viên có thể liên hệ và hỗ trợ quý khách trong thời gian sớm nhất.</p>
             <div class="row gy-3">
@@ -168,7 +168,7 @@
                 <!--                                <div class="error-message"></div>-->
                 <!--                                <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>-->
 
-                <button type="submit" onclick="sendEmail()">Gửi thông tin</button>
+                <button type="submit" >Gửi thông tin</button>
               </div>
 
             </div>
@@ -1181,16 +1181,17 @@
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
   function sendEmail() {
+    console.log("eeee")
     Email.send({
-      Host : "smtp.mailtrap.io",
-      Username : "api",
-      Password : "425628c90245813bb9ba82e7dd4abf7b",
+      Host : "sandbox.smtp.mailtrap.io",
+      Username : "0d8a8c4c1cd61e",
+      Password : "010dcbce0ae3d6",
       To : 'huyem1004@gmail.com',
-      From : "mailtrap@ngoimaufuchi.xyz",
+      From : "huy10041996@gmail.com",
       Subject : "Test email",
       Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
     }).then(
-            message => alert(message)
+            message => alert("hello")
     );
   }
 </script>
